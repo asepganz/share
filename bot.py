@@ -43,7 +43,7 @@ class Bot(Client):
         except Exception as a:
             self.LOGGER(__name__).warning(a)
             self.LOGGER(__name__).info(
-                "Bot Berhenti. Gabung Group https://t.me/AlteregoNetwork untuk Bantuan"
+                "Bot Rusak, nonton youtube gausah manja"
             )
             sys.exit()
 
@@ -85,13 +85,13 @@ class Bot(Client):
                 f"Pastikan @{self.username} adalah admin di Channel DataBase anda, CHANNEL_ID Saat Ini: {CHANNEL_ID}"
             )
             self.LOGGER(__name__).info(
-                "Bot Berhenti. Gabung Group https://t.me/AlteregoNetwork untuk Bantuan"
+                "Bot Rusak, nonton youtube gausah manja"
             )
             sys.exit()
 
         self.set_parse_mode(enums.ParseMode.HTML)
         self.LOGGER(__name__).info(
-            f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{OWNER}\nJika @{OWNER} Membutuhkan Bantuan, Silahkan Tanyakan di chat https://t.me/SayaKyu"
+            f"[🔥 MENYALA BOSKU 🔥]\n\nBOT Dientot dan Dilahiri oleh @{OWNER}\nJika @{OWNER} Cemburu, yaudah gausah nangis"
         )
 
     async def stop(self, *args):
