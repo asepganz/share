@@ -60,7 +60,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 # Pesan Awalan /start
 START_MSG = os.environ.get(
     "START_MESSAGE",
-    "<b>Hello {first}</b>\n\n<b>Saya dapat menyimpan file pribadi di Channel Tertentu dan pengguna lain dapat mengaksesnya dari link khusus.</b>",
+    "<b>Hello {first}</b>\n\n<b>Jika ingin menonton tanpa harus klik link/bot kamu bisa join grup vip dengan harga yang sangat murah dan terjangkau.</b>\n<b>Hanya dengan membayar Rp. 25K kamu bisa menikmati ratusan hingga ribuan grup tanpa cape klik link/bot</b>\n <b> ☎️ JOIN : @ADMSERBA25K</b>\n <b>🎥 PREVIEW : @PREVIEWSERBA25K</b> \n <b> 📓 TESTIMONI : @SERBA25KNIH </b>",
 )
 try:
     ADMINS = [int(x) for x in (os.environ.get("ADMINS", "").split())]
