@@ -56,7 +56,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 # Pesan Awalan /start
 START_MSG = os.environ.get(
     "START_MESSAGE",
-    "<b>Halo {first} sebelum menonton kamu harus join terlebih dahulu channel dibawah ini, setelah join kamu kembali ke bot ini lalu klik coba lagi </b>\n\n<b>Jika kamu ingin menonton tanpa harus klik link/bot kamu bisa join grup VIP dengan harga yang sangat murah dan terjangkau.</b>\n\n<b>Kamu cuma perlu membayar Rp. 25K kamu bisa menikmati ratusan hingga ribuan video tanpa cape klik link/bot</b>\n\n <b>☎️ JOIN : @ADMSERBA25K</b>\n<b>📓 TESTIMONI : @SERBA25KNIH</b> \n<b>🎥 PREVIEW : @PREVIEWSERBA25K</b>",
+    "<b>Halo {first} sebelum menonton kamu harus join terlebih dahulu channel dibawah ini, setelah join kamu kembali ke bot ini lalu klik coba lagi </b>\n\n<b>Jika kamu ingin menonton tanpa harus klik link/bot kamu bisa join grup VIP/VVIP berisikan ribuan video dengan kualitas memuaskan .</b>\n\n<b>☎️ JOIN : @KAYLAPUTRITRUSTED</b>\n<b>📓 TESTIMONI : @TESTI_KAYLA</b>",
 )
 try:
     ADMINS = [int(x) for x in (os.environ.get("ADMINS", "").split())]
@@ -66,7 +66,7 @@ except ValueError:
 # Pesan Saat Memaksa Subscribe
 FORCE_MSG = os.environ.get(
     "FORCE_SUB_MESSAGE",
-    "<b>Hello {first} sebelum menonton kamu harus join terlebih dahulu channel dibawah ini, setelah join kamu kembali ke bot ini lalu klik coba lagi</b>\n\n<b>Jika kamu ingin menonton tanpa harus klik link/bot kamu bisa join grup VIP dengan harga yang sangat murah dan terjangkau.</b>\n\n<b>Kamu cuma perlu membayar Rp. 25K kamu bisa menikmati ratusan hingga ribuan video tanpa cape klik link/bot</b>\n\n <b>☎️ JOIN : @ADMSERBA25K</b>\n<b>📓 TESTIMONI : @SERBA25KNIH</b> \n<b>🎥 PREVIEW : @PREVIEWSERBA25K</b>",
+    "<b>Halo {first} sebelum menonton kamu harus join terlebih dahulu channel dibawah ini, setelah join kamu kembali ke bot ini lalu klik coba lagi </b>\n\n<b>Jika kamu ingin menonton tanpa harus klik link/bot kamu bisa join grup VIP/VVIP berisikan ribuan video dengan kualitas memuaskan .</b>\n\n<b>☎️ JOIN : @KAYLAPUTRITRUSTED</b>\n<b>📓 TESTIMONI : @TESTI_KAYLA</b>",
 )
 
 # Atur Teks Kustom Anda di sini, Simpan (None) untuk Menonaktifkan Teks Kustom
