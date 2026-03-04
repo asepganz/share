@@ -46,7 +46,7 @@ while True:
     FORCE_SUB_COUNTER += 1
 
 # Berapa baris maunya
-BUTTONS_PER_ROW = int(os.environ.get("BUTTONS_PER_ROW", "3"))
+BUTTONS_PER_ROW = int(os.environ.get("BUTTONS_PER_ROW", "2"))
 
 # Tulisan joinnya mau gimana
 BUTTONS_JOIN_TEXT = os.environ.get("BUTTONS_JOIN_TEXT", "ʙᴇʀɢᴀʙᴜɴɢ")
