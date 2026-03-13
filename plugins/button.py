@@ -1,17 +1,16 @@
-# Credits: @mrismanaziz
-# FROM File-Sharing-Man <https://github.com/mrismanaziz/File-Sharing-Man/>
-# t.me/SharingUserbot & t.me/Lunatic0de
 
 from config import FORCE_SUB, BUTTONS_PER_ROW, BUTTONS_JOIN_TEXT
 from pyrogram.types import InlineKeyboardButton
+from pyrogram.errors import UserNotParticipant # Tambahan import
 
-
-def start_button(client):
+async def start_button(client):
     if not FORCE_SUB:
         return [
             [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close")]
         ]
 
+    # Catatan: start_button biasanya muncul sebelum pengecekan join, 
+    # namun tetap dibuat agar strukturnya konsisten.
     dynamic_buttons = []
     current_row = []
 
@@ -29,12 +28,63 @@ def start_button(client):
     if current_row:
         dynamic_buttons.append(current_row)
 
-    # gabungkan tombol dinamis dengan tombol tutup
     dynamic_buttons.append(
         [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close")]
     )
 
     return dynamic_buttons
+
+
+async def fsub_button(client, message):
+    if FORCE_SUB:
+        user_id = message.from_user.id
+        dynamic_buttons = []
+        current_row = []
+
+        for key, channel_id in FORCE_SUB.items():
+            # Cek apakah user sudah join
+            try:
+                await client.get_chat_member(channel_id, user_id)
+                # Jika berhasil/tidak error, berarti sudah join.
+                # Kita 'continue' agar tombol ini tidak dimasukkan ke daftar.
+                continue
+            except UserNotParticipant:
+                # Jika error ini muncul, berarti BELUM join.
+                # Masukkan ke baris tombol.
+                current_row.append(
+                    InlineKeyboardButton(
+                        text=f"{BUTTONS_JOIN_TEXT} {key}",
+                        url=getattr(client, f"invitelink{key}")
+                    )
+                )
+            except Exception:
+                # Jika ada error lain (misal bot bukan admin), tetap tampilkan agar aman.
+                current_row.append(
+                    InlineKeyboardButton(
+                        text=f"{BUTTONS_JOIN_TEXT} {key}",
+                        url=getattr(client, f"invitelink{key}")
+                    )
+                )
+
+            if len(current_row) == BUTTONS_PER_ROW:
+                dynamic_buttons.append(current_row)
+                current_row = []
+
+        if current_row:
+            dynamic_buttons.append(current_row)
+
+        # Tambahkan tombol Coba Lagi jika masih ada channel yang belum di-join
+        try:
+            dynamic_buttons.append([
+                InlineKeyboardButton(
+                    text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                    url=f"https://t.me/{client.username}?start={message.command[1]}"
+                )
+            ])
+        except IndexError:
+            pass
+
+        return dynamic_buttons    return dynamic_buttons
 
 
 def fsub_button(client, message):
