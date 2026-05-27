@@ -1,4 +1,4 @@
-        from config import FORCE_SUB, BUTTONS_PER_ROW, BUTTONS_JOIN_TEXT
+from config import FORCE_SUB, BUTTONS_PER_ROW, BUTTONS_JOIN_TEXT
 from pyrogram.types import InlineKeyboardButton
 
 def start_button(client):
